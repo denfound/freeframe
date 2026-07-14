@@ -63,7 +63,7 @@ services:
 
   api:
     build:
-      context: /mnt/d/freeframe
+      context: .
       dockerfile: apps/api/Dockerfile
     ports:
       - "8635:8000"
@@ -94,7 +94,7 @@ services:
 
   worker:
     build:
-      context: /mnt/d/freeframe
+      context: .
       dockerfile: apps/api/Dockerfile
     env_file:
       - stack.env
@@ -121,7 +121,7 @@ services:
 
   email_worker:
     build:
-      context: /mnt/d/freeframe
+      context: .
       dockerfile: apps/api/Dockerfile
     env_file:
       - stack.env
