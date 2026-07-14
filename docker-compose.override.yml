@@ -1,3 +1,13 @@
+   services:
+     api:
+       env_file: !override
+         - stack.env
+     worker:
+       env_file: !override
+         - stack.env
+     email_worker:
+       env_file: !override
+         - stack.env
    volumes:
      miniodata:
        driver: local
