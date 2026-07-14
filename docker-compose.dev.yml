@@ -66,9 +66,9 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
     ports:
-      - "8000:8000"
+      - "8638:8000"
     env_file:
-      - .env
+      - stack.env
     environment:
       DATABASE_URL: postgresql://freeframe:freeframe@postgres:5432/freeframe
       REDIS_URL: redis://redis:6379/0
@@ -98,7 +98,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
     env_file:
-      - .env
+      - stack.env
     environment:
       DATABASE_URL: postgresql://freeframe:freeframe@postgres:5432/freeframe
       REDIS_URL: redis://redis:6379/0
@@ -125,7 +125,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
     env_file:
-      - .env
+      - stack.env
     environment:
       DATABASE_URL: postgresql://freeframe:freeframe@postgres:5432/freeframe
       REDIS_URL: redis://redis:6379/0
@@ -168,5 +168,10 @@ services:
 volumes:
   pgdata:
   miniodata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/d/freeframe/minio
   redisdata:
   web_node_modules:
