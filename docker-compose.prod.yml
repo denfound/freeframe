@@ -84,8 +84,8 @@ services:
   minio:
     image: minio/minio:RELEASE.2025-04-22T22-12-26Z   # 2025+ supports the boto3>=1.36 checksums
     ports:
-      "9000:9000"
-      "9001:9001"
+      - "9000:9000"
+      - "9001:9001"
     command: server /data --console-address ":9001"
     env_file:
       - stack.env
