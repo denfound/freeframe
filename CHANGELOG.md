@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- **Version switch clears active comment annotation** — switching versions in the single-asset review view now clears the focused comment and active drawing overlay, preventing drawings from previous versions from lingering on top of the newly selected version.
 - Server-side password length validation on change-password endpoint.
 
 ### Changed
