@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Server-side password length validation on change-password endpoint.
+
+### Changed
+- Password changes now revoke all other sessions by incrementing token version; current session receives fresh tokens to stay logged in.
+
 ## [1.7.4] - 2026-07-23
 
 ### Fixed
